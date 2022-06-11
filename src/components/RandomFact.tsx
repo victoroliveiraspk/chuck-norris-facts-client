@@ -20,7 +20,7 @@ const RandomFact = () => {
   }, [])
   
   return (
-    <div className='flex justify-center mt-24'>
+    <div className='flex justify-center'>
       <div className='bg-gray-200 w-6/12 p-2'>
         <span className='text-gray-500 text-3xl'>"</span>
         <p className='text-center'>{fact}</p>

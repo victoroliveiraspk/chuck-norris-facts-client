@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import RandomFact from '../components/random-fact/RandomFact'
+import RandomFact from '../components/RandomFact'
 
 const Home: NextPage = () => {
   return (
@@ -41,7 +41,9 @@ const Home: NextPage = () => {
         <div className='loading'></div>
       </div> */}
 
-      <RandomFact />
+      <div className='mt-24'>
+        <RandomFact />
+      </div>
     </>
   )
 }
