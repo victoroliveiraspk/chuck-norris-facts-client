@@ -10,7 +10,33 @@ const Home: NextPage = () => {
         <input className='shadow appearance-none border rounded w-6/12 py-4 px-3 text-gray-700 focus:outline-none absolute' placeholder='Search...' style={{ bottom: '-25px' }}/>
       </form>
 
-      <div className='flex justify-center'>
+      <div className='mt-20 px-5'>
+        <p className='text-xs mb-5'>500 results for "car"</p>
+
+        <div className='border p-4 text-center'>
+          Chuck Norris is the only person who can punch you in the back of the face.
+        </div>
+        <div className='border p-4 text-center'>
+          While playing Blackjack, Chuck Norris can bust without hitting. He just chooses not to because Chuck Norris never busts
+        </div>
+        <div className='border p-4 text-center'>
+          Chuck Norris once fed a cannibal with a knuckle sandwich.
+        </div>
+        <div className='border p-4 text-center'>
+          Martial arts have given Chuck Norris the ability to predict your actions before you make them. He can look at you and know if you're getting ready to run, pull a gun or get your heart torn out. Guess what: You're always getting ready to get your heart torn out.
+        </div>
+        <div className='border p-4 text-center'>
+          Albert Einstein's hair used to be neatly combed...until the day he met Chuck Norris.
+        </div>
+        <div className='border p-4 text-center'>
+          the Speaking Clock calls up Chuck Norris to make sure IT is correct
+        </div>
+        <div className='border p-4 text-center'>
+          Chuck Norris doesn't need help, help needs Chuck Norris.
+        </div>
+      </div>
+
+      {/* <div className='flex justify-center'>
         <div className='bg-gray-200 w-6/12 mt-24 p-2'>
           <span className='text-gray-500 text-3xl'>"</span>
           <p className='text-center'>It is possible to contract hepatitis from smelling one of Chuck Norris's farts.</p>
@@ -19,7 +45,7 @@ const Home: NextPage = () => {
             <button className='text-xs p-2 text-white round rounded-xl' style={{ backgroundColor: 'rgb(155,109,162)' }}>Update random fact</button>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
