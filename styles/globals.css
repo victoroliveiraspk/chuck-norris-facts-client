@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loading {
+    width: 67.2px;
+    height: 28px;
+    border: 2.2px solid #9b6da2;
+    border-radius: 50%;
+    display: grid;
+    animation: loading-ds34hk 2.8s infinite linear;
+}
+
+.loading:before,
+.loading:after {
+    content: "";
+    grid-area: 1/1;
+    border: inherit;
+    border-radius: 50%;
+    animation: inherit;
+    animation-duration: 4.199999999999999s;
+}
+
+.loading:after {
+    --s: -1;
+}
+
+@keyframes loading-ds34hk {
+    100% {
+        transform: rotate(calc(var(--s, 1)*1turn));
+    }
+}

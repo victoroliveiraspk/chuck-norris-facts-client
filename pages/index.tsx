@@ -3,14 +3,16 @@ import Image from 'next/image'
 
 
 const Home: NextPage = () => {
+  console.log('pass')
   return (
     <>
       <form className='flex flex-col items-center relative' style={{ backgroundColor: 'rgb(155,109,162)' }}>
         <Image src='/chuck-norris-push-up.gif' width={400} height={300}/>
+        <p className='absolute text-white text-5xl text-center' style={{ top: '10%' }}>Chuck Norris facts</p>
         <input className='shadow appearance-none border rounded w-6/12 py-4 px-3 text-gray-700 focus:outline-none absolute' placeholder='Search...' style={{ bottom: '-25px' }}/>
       </form>
 
-      <div className='mt-20 px-5'>
+      {/* <div className='mt-24 px-5'>
         <p className='text-xs mb-5'>500 results for "car"</p>
 
         <div className='border p-4 text-center'>
@@ -34,10 +36,14 @@ const Home: NextPage = () => {
         <div className='border p-4 text-center'>
           Chuck Norris doesn't need help, help needs Chuck Norris.
         </div>
+      </div> */}
+
+      <div className='flex mt-32 justify-center'>
+        <div className='loading'></div>
       </div>
 
-      {/* <div className='flex justify-center'>
-        <div className='bg-gray-200 w-6/12 mt-24 p-2'>
+      {/* <div className='flex justify-center mt-24'>
+        <div className='bg-gray-200 w-6/12 p-2'>
           <span className='text-gray-500 text-3xl'>"</span>
           <p className='text-center'>It is possible to contract hepatitis from smelling one of Chuck Norris's farts.</p>
           <p className='text-gray-500 text-3xl text-right'>"</p>
