@@ -15,7 +15,9 @@ const Home: NextPage = () => {
           <span className='text-gray-500 text-3xl'>"</span>
           <p className='text-center'>It is possible to contract hepatitis from smelling one of Chuck Norris's farts.</p>
           <p className='text-gray-500 text-3xl text-right'>"</p>
-          <button className='text-xs p-2 text-white round rounded-xl' style={{ backgroundColor: 'rgb(155,109,162)' }}>Update random fact</button>
+          <div className='flex justify-center'>
+            <button className='text-xs p-2 text-white round rounded-xl' style={{ backgroundColor: 'rgb(155,109,162)' }}>Update random fact</button>
+          </div>
         </div>
       </div>
     </>
