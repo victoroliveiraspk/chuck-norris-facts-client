@@ -2,31 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-.loading {
-    width: 67.2px;
-    height: 28px;
-    border: 2.2px solid #9b6da2;
-    border-radius: 50%;
-    display: grid;
-    animation: loading-ds34hk 2.8s infinite linear;
+.pulsate-bck-animation {
+  -webkit-animation: pulsate-bck-animation 0.5s ease-in-out infinite both;
+  animation: pulsate-bck-animation 0.5s ease-in-out infinite both;
 }
 
-.loading:before,
-.loading:after {
-    content: "";
-    grid-area: 1/1;
-    border: inherit;
-    border-radius: 50%;
-    animation: inherit;
-    animation-duration: 4.199999999999999s;
+@-webkit-keyframes pulsate-bck-animation {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
-.loading:after {
-    --s: -1;
-}
+@keyframes pulsate-bck-animation {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 
-@keyframes loading-ds34hk {
-    100% {
-        transform: rotate(calc(var(--s, 1)*1turn));
-    }
+  50% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }

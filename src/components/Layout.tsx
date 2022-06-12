@@ -41,8 +41,9 @@ const Layout = ({ children, loading = false } : Props) => {
       <div className='mt-20 px-4'>
         {loading || children}
         {loading && (
-          <div className='flex justify-center'>
-            <div className='loading'></div>
+          <div className='flex justify-center flex-col items-center'>
+            <Image className='pulsate-bck-animation' src='/hat.png' width={64} height={64}/>
+            Loading...
           </div>
         )}
       </div>
