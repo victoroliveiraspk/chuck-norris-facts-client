@@ -12,6 +12,11 @@ const Layout = ({ children } : Props) => {
   const handleSubmit = (event: any) => {
     event.preventDefault()
     const search = event.target.elements.search.value
+    
+    if(search.length < 2) {
+      return
+    }
+
     router.push({
       pathname: '/search',
       query: { search }
