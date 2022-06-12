@@ -22,8 +22,7 @@ const Layout = ({ children, loading = false } : Props) => {
 
   return (
     <>
-      <form className='flex flex-col items-center relative'
-        style={{ backgroundColor: 'rgb(155,109,162)' }}
+      <form className='bg-primary flex flex-col items-center relative'
         onSubmit={handleSubmit}>
         <Image src='/chuck-norris-push-up.gif' width={400} height={300}/>
         <p className='absolute text-white text-3xl sm:text-5xl text-center'

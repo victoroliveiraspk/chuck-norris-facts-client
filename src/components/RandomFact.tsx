@@ -14,8 +14,7 @@ const RandomFact = ({ fact, onClickUpdate }: Props) => {
         <p className='random-fact-text text-center'>{fact.value}</p>
         <div className='flex justify-center'>
           <button
-            className='update-random-fact-btn text-xs p-2 text-white round rounded-xl'
-            style={{ backgroundColor: 'rgb(155,109,162)' }}
+            className='bg-primary update-random-fact-btn text-xs p-2 text-white round rounded-xl'
             onClick={onClickUpdate}>
             Update random fact
           </button>
