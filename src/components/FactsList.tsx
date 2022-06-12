@@ -1,49 +1,21 @@
-import { useEffect, useState } from "react"
+import Fact from "../models/fact.model"
 
 interface Props {
+  facts: Fact[]
   searchQuery: string
 }
 
-const searchFacts = (query: string) => {
-  return fetch(`https://api.chucknorris.io/jokes/search?query=${query}`).then(response => response.json())
-}
-
-const FactsList = ({ searchQuery }: Props) => {
-  const [loading, setLoading] = useState(false)
-  const [facts, setFacts] = useState([])
-
-  const updateList = () => {
-    if(searchQuery.length < 3) {
-      return setFacts([])
-    }
-    
-    setLoading(true)
-    searchFacts(searchQuery).then((response) => {
-      setFacts(
-        response.result.map((fact: any) => fact.value)
-      )
-    }).finally(() => setLoading(false))
-  }
-
-  useEffect(() => {
-    updateList()
-  }, [searchQuery])
-
+const FactsList = ({ facts, searchQuery }: Props) => {
   return (
     <div className='fact-list flex flex-col justify-around items-center'>
-      {
-        loading ? (<div className='loading'></div>)
-        : (<>
-            <div className='w-full'>
-              <p className='text-xs mb-5'>{facts.length} results for "{searchQuery}"</p>
-            </div>
-            {loading || facts.map((fact, index) => (
-              <div className='fact-item border p-4 w-full' key={index}>
-                {fact}
-              </div>
-            ))}
-        </>)
-      }
+      <div className='w-full'>
+        <p className='text-xs mb-5'>{facts.length} results for "{searchQuery}"</p>
+      </div>
+      {facts.map((fact, index) => (
+        <div className='fact-item border p-4 w-full' key={index}>
+          {fact.value}
+        </div>
+      ))}
     </div>
   )
 }

@@ -24,15 +24,17 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Home = ({ initialRandomFact }: Props) => {
   const [randomFact, setRandomFact] = useState<Fact>(initialRandomFact)
+  const [loading, setLoading] = useState(false)
 
   const updateRandomFact = () => {
+    setLoading(true)
     getRandomFact().then((randomFact: Fact) => {
       setRandomFact(randomFact)
-    })
+    }).finally(() => setLoading(false))
   }
 
   return (
-    <Layout>
+    <Layout loading={loading}>
       <RandomFact fact={randomFact} onClickUpdate={updateRandomFact} />
     </Layout>
   )

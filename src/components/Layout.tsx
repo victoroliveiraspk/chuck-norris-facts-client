@@ -4,9 +4,10 @@ import { useRouter } from 'next/router'
 
 interface Props {
   children: ReactNode
+  loading?: boolean
 }
 
-const Layout = ({ children } : Props) => {
+const Layout = ({ children, loading = false } : Props) => {
   const router = useRouter()
 
   const handleSubmit = (event: any) => {
@@ -38,7 +39,12 @@ const Layout = ({ children } : Props) => {
       </form>
 
       <div className='mt-20 px-4'>
-        {children}
+        {loading || children}
+        {loading && (
+          <div className='flex justify-center'>
+            <div className='loading'></div>
+          </div>
+        )}
       </div>
     </> 
   )
