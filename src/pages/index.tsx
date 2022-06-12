@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       <form className='flex flex-col items-center relative' style={{ backgroundColor: 'rgb(155,109,162)' }} onSubmit={onSubmitHandler}>
         <Image src='/chuck-norris-push-up.gif' width={400} height={300}/>
         <p className='absolute text-white text-5xl text-center' style={{ top: '10%' }}>Chuck Norris facts</p>
-        <input className='shadow appearance-none border rounded w-6/12 py-4 px-3 text-gray-700 focus:outline-none absolute' placeholder='Search...' style={{ bottom: '-25px' }} name='searchQuery'/>
+        <input className='shadow appearance-none border rounded w-6/12 py-4 px-3 text-gray-700 focus:outline-none absolute' placeholder='Search...' style={{ bottom: '-25px' }} name='searchQuery' autoFocus/>
       </form>
 
       <div className='mt-20 px-4'>
