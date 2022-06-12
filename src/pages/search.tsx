@@ -5,11 +5,11 @@ import { useRouter } from 'next/router'
 
 const Search = () => {
   const router = useRouter()
-  const search: string = router.query.search as string ?? ''
+  const query: string = router.query.query as string ?? ''
 
   return (
     <Layout>
-      <FactList searchQuery={search} />
+      <FactList searchQuery={query} />
     </Layout>
   )
 }

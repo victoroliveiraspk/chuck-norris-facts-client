@@ -11,15 +11,11 @@ const Layout = ({ children } : Props) => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault()
-    const search = event.target.elements.search.value
-    
-    if(search.length < 2) {
-      return
-    }
+    const query = event.target.elements.query.value
 
     router.push({
       pathname: '/search',
-      query: { search }
+      query: { query }
     })
   }
 
@@ -33,10 +29,10 @@ const Layout = ({ children } : Props) => {
           style={{ top: '10%' }}>
           Chuck Norris facts
         </p>
-        <input className='shadow appearance-none border rounded w-10/12 sm:w-6/12 py-4 px-3 text-gray-700 focus:outline-none absolute'
+        <input className='search-input shadow appearance-none border rounded w-10/12 sm:w-6/12 py-4 px-3 text-gray-700 focus:outline-none absolute'
           placeholder='Search...'
           style={{ bottom: '-25px' }}
-          name='search'
+          name='query'
           autoFocus
           autoComplete='off'/>
       </form>
