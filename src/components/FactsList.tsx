@@ -30,7 +30,7 @@ const FactsList = ({ searchQuery }: Props) => {
   }, [searchQuery])
 
   return (
-    <div className='flex flex-col justify-around items-center'>
+    <div className='fact-list flex flex-col justify-around items-center'>
       {
         loading ? (<div className='loading'></div>)
         : (<>
@@ -38,7 +38,7 @@ const FactsList = ({ searchQuery }: Props) => {
               <p className='text-xs mb-5'>{facts.length} results for "{searchQuery}"</p>
             </div>
             {loading || facts.map((fact, index) => (
-              <div className='border p-4 w-full' key={index}>
+              <div className='fact-item border p-4 w-full' key={index}>
                 {fact}
               </div>
             ))}
