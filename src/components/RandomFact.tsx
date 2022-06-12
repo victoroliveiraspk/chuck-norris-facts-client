@@ -27,9 +27,9 @@ const RandomFact = () => {
         {loading || (
           <>
             <span className='text-gray-500 text-3xl'>"</span>
-            <p className='text-center'>{fact}</p>
+            <p className='random-fact-text text-center'>{fact}</p>
             <div className='flex justify-center'>
-              <button className='text-xs p-2 text-white round rounded-xl' style={{ backgroundColor: 'rgb(155,109,162)' }} onClick={updateRandomFact}>
+              <button className='update-random-fact-btn text-xs p-2 text-white round rounded-xl' style={{ backgroundColor: 'rgb(155,109,162)' }} onClick={updateRandomFact}>
                 Update random fact
               </button>
             </div>
