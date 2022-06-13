@@ -19,18 +19,18 @@ const Search = () => {
     const factService = new FactService()
     factService.searchFacts(query).then((facts) => {
       setFacts(facts)
+
+      if(facts.length == 0) {
+        setErrorMessage('No facts found.')
+      }
     }).catch((error) => {
       setErrorMessage(error.message)
     }).finally(() => setLoading(false))
   }, [query])
 
   return (
-    <Layout loading={loading}>
-      {
-        errorMessage ?
-          (<p className='error-message-text text-center text-red-500'>{errorMessage}</p>)
-          : <FactList facts={facts} searchQuery={query} />
-      }
+    <Layout loading={loading} errorMessage={errorMessage}>
+      <FactList facts={facts} searchQuery={query} />
     </Layout>
   )
 }

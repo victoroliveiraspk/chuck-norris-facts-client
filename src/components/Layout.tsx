@@ -5,9 +5,10 @@ import { useRouter } from 'next/router'
 interface Props {
   children: ReactNode
   loading?: boolean
+  errorMessage?: string
 }
 
-const Layout = ({ children, loading = false } : Props) => {
+const Layout = ({ children, loading = false, errorMessage = '' } : Props) => {
   const router = useRouter()
 
   const handleSubmit = (event: any) => {
@@ -38,13 +39,17 @@ const Layout = ({ children, loading = false } : Props) => {
       </form>
 
       <div className='mt-20 px-4'>
-        {loading || children}
+        {errorMessage && <p className='error-message-text text-center text-red-500'>{errorMessage}</p>}
+        
+        {loading == false && errorMessage == '' &&  children}
+
         {loading && (
           <div className='flex justify-center flex-col items-center'>
             <Image className='pulsate-bck-animation' src='/hat.png' width={64} height={64}/>
             Loading...
           </div>
         )}
+        
       </div>
     </> 
   )
