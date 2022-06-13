@@ -3,7 +3,7 @@ import { randomFactQuery } from '../queries/random-fact.query'
 import { searchFactsQuery } from '../queries/search-facts.query'
 
 export default class FactService {
-  private URL = 'http://localhost:3333/graphql'
+  private URL = 'https://chuck-norris-facts-api.herokuapp.com/graphql'
 
   getRandomFact(): Promise<Fact> {
     return fetch(this.URL, {
