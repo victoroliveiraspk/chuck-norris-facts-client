@@ -36,7 +36,7 @@ describe('search page', () => {
   it('without results', () => {
     cy.get('.search-input').type('testeste{enter}')
     cy.wait(1000)
-    cy.get('.fact-list').find('.fact-item').should('have.length', 0)
+    cy.get('.error-message-text').should('contain', 'No facts found.')
   })
 
   it('query with less than 3 characters', () => {
