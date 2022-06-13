@@ -27,7 +27,13 @@ export default class FactService {
       },
       body: JSON.stringify({ query: searchFactsQuery, variables: { query } })
     }).then((response) => response.json())
-      .then((response) => response.data.searchFacts)
+      .then((response) => {
+        if (response.errors?.length > 0) {
+          throw new Error(response.errors[0].message);
+        }
+
+        return response.data.searchFacts
+      })
       .then((response: SearchResponse) => response.result ?? [])
   }
 }
