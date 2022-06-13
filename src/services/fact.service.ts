@@ -2,11 +2,6 @@ import Fact from "../models/fact.model"
 import { randomFactQuery } from '../queries/random-fact.query'
 import { searchFactsQuery } from '../queries/search-facts.query'
 
-interface SearchResponse {
-  total: number
-  result: Fact[]
-}
-
 export default class FactService {
   getRandomFact(): Promise<Fact> {
     return fetch('http://localhost:3333/graphql', {
@@ -32,8 +27,7 @@ export default class FactService {
           throw new Error(response.errors[0].message);
         }
 
-        return response.data.searchFacts
+        return response.data.searchFacts.result ?? []
       })
-      .then((response: SearchResponse) => response.result ?? [])
   }
 }
