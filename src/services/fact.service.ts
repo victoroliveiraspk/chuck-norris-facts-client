@@ -3,8 +3,10 @@ import { randomFactQuery } from '../queries/random-fact.query'
 import { searchFactsQuery } from '../queries/search-facts.query'
 
 export default class FactService {
+  private URL = 'http://localhost:3333/graphql'
+
   getRandomFact(): Promise<Fact> {
-    return fetch('http://localhost:3333/graphql', {
+    return fetch(this.URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -15,7 +17,7 @@ export default class FactService {
   }
 
   searchFacts(query: string): Promise<Fact[]> {
-    return fetch('http://localhost:3333/graphql', {
+    return fetch(this.URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
