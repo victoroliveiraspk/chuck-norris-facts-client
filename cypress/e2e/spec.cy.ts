@@ -28,20 +28,20 @@ describe('search page', () => {
   })
 
   it('with results', () => {
-    cy.get('.search-input').type(`cars{enter}`)
+    cy.get('.search-input').type(`teste{enter}`)
     cy.wait(1000)
     cy.get('.fact-list').find('.fact-item').should('have.length.gte', 1)
   })
 
   it('without results', () => {
-    cy.get('.search-input').type('djlkasjdlas{enter}')
+    cy.get('.search-input').type('testeste{enter}')
     cy.wait(1000)
     cy.get('.fact-list').find('.fact-item').should('have.length', 0)
   })
 
   it('query with less than 3 characters', () => {
-    cy.get('.search-input').type('ca{enter}')
+    cy.get('.search-input').type('te{enter}')
     cy.wait(1000)
-    cy.get('.fact-list').find('.fact-item').should('have.length', 0)
+    cy.get('.error-message-text').should('contain', 'Search must be at least 2 characters.')
   })
 })

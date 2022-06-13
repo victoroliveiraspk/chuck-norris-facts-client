@@ -28,7 +28,7 @@ const Search = () => {
     <Layout loading={loading}>
       {
         errorMessage ?
-          (<p className='text-center text-red-500'>{errorMessage}</p>)
+          (<p className='error-message-text text-center text-red-500'>{errorMessage}</p>)
           : <FactList facts={facts} searchQuery={query} />
       }
     </Layout>
