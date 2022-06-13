@@ -1,4 +1,4 @@
-# Chuck Norris facts
+# Chuck Norris facts client
 
 ## Technologies that was used to build this app:
 
