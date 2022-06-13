@@ -30,7 +30,7 @@ const Layout = ({ children, loading = false, errorMessage = '' } : Props) => {
       </Head>
       <form className='bg-primary flex flex-col items-center relative'
         onSubmit={handleSubmit}>
-        <Image src='/chuck-norris-push-up.gif ' width={400} height={300}/>
+        <Image src='/chuck-norris-push-up.gif' width={400} height={300}/>
         <div className='absolute text-white text-3xl sm:text-5xl text-center'
           style={{ top: '10%' }}>
           <Link href='/'>Chuck Norris facts</Link>
