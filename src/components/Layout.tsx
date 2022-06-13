@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 interface Props {
   children: ReactNode
@@ -23,6 +24,9 @@ const Layout = ({ children, loading = false, errorMessage = '' } : Props) => {
 
   return (
     <>
+      <Head>
+        <title>Chuck Norris Facts</title>
+      </Head>
       <form className='bg-primary flex flex-col items-center relative'
         onSubmit={handleSubmit}>
         <Image src='/chuck-norris-push-up.gif' width={400} height={300}/>
