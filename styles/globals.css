@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  outline: none;
+}
+
 .bg-primary {
   background-color: rgb(155,109,162);
 }
